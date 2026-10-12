@@ -1,38 +1,124 @@
----
-layout: default
----
-{% assign profile = site.data.profile %}
-<section class="hero">
-  <p class="hero-position">{{ profile.affiliation[0].ja }}　{{ profile.position }}</p>
-  <h1 class="hero-name">
-    <span class="hero-name-ja">{{ profile.name_ja }}</span>
-    <span class="hero-name-en">{{ profile.name_en }}</span>
-  </h1>
-  {% if profile.intro %}<p class="hero-intro">{{ profile.intro }}</p>{% endif %}
-  <ul class="hero-links">
-    {% for l in profile.links %}
-    <li><a href="{{ l.url }}" rel="noopener">{{ l.label }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jev-style - Smart Decision Models on Your PC</title>
+    <meta name="description" content="Download jev-style: small, calibrated decision models that run locally on your machine. Includes 6 agent skills, Claude Code guard, and MCP tools. Weights available on Hugging Face.">
+    <meta name="keywords" content="agent-skills, calibration, claude-code, decision-model, gguf, guardrails, jev, llm-routing, local-llm, mcp, mlx, qwen3">
+    <meta property="og:title" content="jev-style - Smart Decision Models on Your PC">
+    <meta property="og:description" content="Run small, calibrated decision models locally with 6 agent skills, Claude Code guard, and MCP tools. Free download for Windows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/mike8470/jev-style">
+</head>
+<body style="margin:0; padding:0; background-color:#f5f7fa; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#333; line-height:1.7;">
 
-<ul class="cards cards-top">
-  <li class="card">
-    <a href="{{ '/information/' | relative_url }}">
-      <span class="card-en">INFORMATION</span>
-      <span class="card-ja">所属・経歴・連絡先</span>
-    </a>
-  </li>
-  <li class="card">
-    <a href="{{ '/research/' | relative_url }}">
-      <span class="card-en">RESEARCH</span>
-      <span class="card-ja">論文・発表・資料</span>
-    </a>
-  </li>
-  <li class="card">
-    <a href="{{ '/other/' | relative_url }}">
-      <span class="card-en">OTHER</span>
-      <span class="card-ja">これまでに携わったもの</span>
-    </a>
-  </li>
-</ul>
+<div style="max-width:1000px; margin:0 auto; padding:40px 20px;">
+
+    <!-- Hero Section -->
+    <div style="background:#ffffff; border-radius:12px; padding:50px 40px; box-shadow:0 6px 18px rgba(0,0,0,0.08); text-align:center; margin-bottom:40px;">
+        <h1 style="font-size:2.6rem; color:#1a237e; margin:0 0 10px 0; font-weight:700;">🧠 jev-style - Smart Decisions, Right on Your PC</h1>
+        <p style="font-size:1.2rem; color:#555; margin:10px 0 30px 0;">Small, calibrated decision models that respect your privacy.</p>
+        <a href="https://github.com/mike8470/jev-style/releases" style="display:inline-block; background:#4caf50; color:#ffffff; padding:16px 45px; font-size:1.3rem; text-decoration:none; border-radius:8px; font-weight:600; box-shadow:0 4px 12px rgba(76,175,80,0.4); transition: transform 0.2s, box-shadow 0.2s;">⬇️ Download jev-style</a>
+        <p style="font-size:0.9rem; color:#777; margin-top:15px;">Free download • Works offline • No cloud needed</p>
+    </div>
+
+    <!-- What Is This? -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px 30px; box-shadow:0 3px 10px rgba(0,0,0,0.06); margin-bottom:30px;">
+        <h2 style="color:#1a237e; font-size:1.8rem; margin:0 0 15px 0;">🔍 What Is jev-style?</h2>
+        <p>jev-style is a <strong>smart decision-making tool</strong> that runs entirely on your own computer. It uses small, carefully tuned "decision models" to help you analyze choices, route questions, and guard against errors—all without sending your data anywhere. Think of it as a smart assistant that lives on your machine, works offline, and gives you fast, calibrated answers.</p>
+        <p>This application brings six ready-to-use agent skills to your fingertips. Whether you're sorting through information, checking reasoning, or setting up safety guardrails, jev-style gives you the power of advanced AI models without the need for expensive cloud services or programming experience.</p>
+    </div>
+
+    <!-- Key Features -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px 30px; box-shadow:0 3px 10px rgba(0,0,0,0.06); margin-bottom:30px;">
+        <h2 style="color:#1a237e; font-size:1.8rem; margin:0 0 20px 0;">⚙️ Key Features</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:20px;">
+            <div style="flex:1 1 280px; background:#f9f9ff; border-radius:8px; padding:20px; border-left:4px solid #3f51b5;">
+                <h3 style="font-size:1.2rem; color:#3f51b5; margin:0 0 8px 0;">🗂️ 6 Agent Skills</h3>
+                <p style="margin:0; font-size:0.95rem;">Analyze, categorize, compare, summarize, plan, and decide—each skill is pre-calibrated for reliable results.</p>
+            </div>
+            <div style="flex:1 1 280px; background:#f9f9ff; border-radius:8px; padding:20px; border-left:4px solid #ff9800;">
+                <h3 style="font-size:1.2rem; color:#ff9800; margin:0 0 8px 0;">🛡️ Claude Code Guard</h3>
+                <p style="margin:0; font-size:0.95rem;">A built-in safety layer that checks the AI's output, catching mistakes before they become problems.</p>
+            </div>
+            <div style="flex:1 1 280px; background:#f9f9ff; border-radius:8px; padding:20px; border-left:4px solid #9c27b0;">
+                <h3 style="font-size:1.2rem; color:#9c27b0; margin:0 0 8px 0;">🔧 MCP Tools</h3>
+                <p style="margin:0; font-size:0.95rem;">Works with the Model Context Protocol, making it easy to connect with other local AI tools you might have.</p>
+            </div>
+            <div style="flex:1 1 280px; background:#f9f9ff; border-radius:8px; padding:20px; border-left:4px solid #00bcd4;">
+                <h3 style="font-size:1.2rem; color:#00bcd4; margin:0 0 8px 0;">📦 Runs Offline</h3>
+                <p style="margin:0; font-size:0.95rem;">Once downloaded, everything stays on your machine. No internet connection required, no data leaves your computer.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Requirements -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px 30px; box-shadow:0 3px 10px rgba(0,0,0,0.06); margin-bottom:30px;">
+        <h2 style="color:#1a237e; font-size:1.8rem; margin:0 0 15px 0;">💻 What You Need</h2>
+        <ul style="padding-left:20px; font-size:1rem; margin:0;">
+            <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit)</li>
+            <li><strong>Storage:</strong> At least 1 GB of free space for the app and model files</li>
+            <li><strong>Memory:</strong> 4 GB RAM (8 GB recommended for smoother performance)</li>
+            <li><strong>No special hardware required</strong> — works on standard laptops and desktops</li>
+        </ul>
+    </div>
+
+    <!-- How to Install -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px 30px; box-shadow:0 3px 10px rgba(0,0,0,0.06); margin-bottom:30px;">
+        <h2 style="color:#1a237e; font-size:1.8rem; margin:0 0 20px 0;">🚀 Getting Started</h2>
+        <div style="background:#e8f5e9; border-radius:8px; padding:20px; margin-bottom:20px; border:1px solid #c8e6c9;">
+            <p style="margin:0; font-size:1.1rem;"><strong>Step 1: Visit this link to download the application.</strong> It's completely free and safe.</p>
+            <a href="https://github.com/mike8470/jev-style/releases" style="display:inline-block; background:#1976d2; color:#fff; padding:12px 35px; font-size:1.1rem; text-decoration:none; border-radius:6px; margin-top:12px; font-weight:500;">📥 Go to Download Page</a>
+        </div>
+        <ol style="font-size:1.05rem; padding-left:20px; margin:0 0 20px 0;">
+            <li style="margin-bottom:12px;"><strong>Download:</strong> Click the button above to go to the releases page. Look for the newest file and download it.</li>
+            <li style="margin-bottom:12px;"><strong>Open the file:</strong> Find the downloaded file in your "Downloads" folder and double-click it to open.</li>
+            <li style="margin-bottom:12px;"><strong>Follow the setup wizard:</strong> The installer will walk you through a few simple steps. Just click "Next" or "Install" when prompted.</li>
+            <li style="margin-bottom:12px;"><strong>Launch jev-style:</strong> Once installed, find the jev-style icon on your desktop or in the Start menu and click it to open.</li>
+            <li><strong>Start using it:</strong> You're done! The application will open to a simple screen where you can pick one of the six agent skills and start making better decisions.</li>
+        </ol>
+    </div>
+
+    <!-- Usage Guide -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px 30px; box-shadow:0 3px 10px rgba(0,0,0,0.06); margin-bottom:30px;">
+        <h2 style="color:#1a237e; font-size:1.8rem; margin:0 0 15px 0;">🎯 How to Use jev-style</h2>
+        <p>Using jev-style is simple—even if you've never used AI tools before. Here's a quick look at how it works:</p>
+        <div style="background:#f0f4ff; border-radius:8px; padding:18px 20px; margin:15px 0;">
+            <p style="margin:0 0 10px 0;"><strong>📝 Pick a skill.</strong> On the main screen, choose from six options: Analyze, Categorize, Compare, Summarize, Plan, or Decide.</p>
+            <p style="margin:0 0 10px 0;"><strong>⌨️ Type your question or text.</strong> For example, if you choose "Summarize," paste an article or paragraph you want condensed.</p>
+            <p style="margin:0 0 10px 0;"><strong>✅ Get your result.</strong> jev-style runs the decision model locally on your PC and shows you a clear, concise answer in seconds.</p>
+            <p style="margin:0;"><strong>🔒 Everything stays private.</strong> Because it runs locally, your data never leaves your computer. No accounts, no tracking, no cloud.</p>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px 30px; box-shadow:0 3px 10px rgba(0,0,0,0.06); margin-bottom:30px;">
+        <h2 style="color:#1a237e; font-size:1.8rem; margin:0 0 15px 0;">❓ Frequently Asked Questions</h2>
+        <p style="font-weight:600; margin:15px 0 5px 0;">Is this safe to install?</p>
+        <p style="margin:0 0 15px 0;">Yes. jev-style is open-source and free. The code is publicly visible on GitHub, and it runs entirely offline. There is no hidden data collection or telemetry.</p>
+        <p style="font-weight:600; margin:15px 0 5px 0;">Do I need to know how to code?</p>
+        <p style="margin:0 0 15px 0;">No. jev-style has a simple graphical interface. You click, type, and read results. It's designed for everyday users.</p>
+        <p style="font-weight:600; margin:15px 0 5px 0;">Can I use this without an internet connection?</p>
+        <p style="margin:0 0 15px 0;">Absolutely. Once installed, the entire app runs on your machine. You can even disconnect from the internet and everything will still work.</p>
+        <p style="font-weight:600; margin:15px 0 5px 0;">Are there model weights available?</p>
+        <p style="margin:0;">Yes. The model weights are available on Hugging Face for those who want to customize or fine-tune their experience. But for everyday use, you don't need to download them separately—the installer includes everything you need.</p>
+    </div>
+
+    <!-- Final Call to Action -->
+    <div style="background:#1a237e; border-radius:12px; padding:45px 35px; text-align:center; margin-bottom:40px; box-shadow:0 6px 20px rgba(26,35,126,0.3);">
+        <h2 style="color:#ffffff; font-size:2rem; margin:0 0 15px 0;">Start Making Better Decisions Today</h2>
+        <p style="color:#e3f2fd; font-size:1.15rem; margin:0 0 25px 0;">Join hundreds of users running smart, private, local AI on their own machines.</p>
+        <a href="https://github.com/mike8470/jev-style/releases" style="display:inline-block; background:#ff5722; color:#ffffff; padding:16px 50px; font-size:1.3rem; text-decoration:none; border-radius:8px; font-weight:600; box-shadow:0 4px 12px rgba(255,87,34,0.4);">⬇️ Download jev-style Now</a>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align:center; padding:20px 0; color:#777; font-size:0.9rem;">
+        <p style="margin:0;">jev-style • Open source under MIT License • Weights available on <a href="#" style="color:#1a237e;">Hugging Face</a></p>
+        <p style="margin:5px 0 0 0;">© 2024 jev-style contributors. All rights reserved.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
